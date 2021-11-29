@@ -20,13 +20,9 @@ Choose a directory where you'd like to clone this repo to (it could even just be
 
 Run the following in your command line
 
-`git clone git@github.com:AshwaryaSmridhi/simple-lambda.git`
+`git@github.com:DevOps-Girls/simple-lambda-alert-notification.git`
 
-<TODO: Add correct repo link>
-
-If you don't have a github account, please download the zip by going to the github link, clicking on the green `Code` dropdown button and selecting the `Download ZIP` link. 
-
-<TODO: Add link here>.
+If you don't have a github account, please download the zip by going to the [github link](https://github.com/DevOps-Girls/simple-lambda-alert-notification), clicking on the green `Code` dropdown button and selecting the `Download ZIP` link. 
 
 <br/> 
 
