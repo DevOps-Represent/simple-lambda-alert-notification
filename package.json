@@ -6,7 +6,8 @@
   "scripts": {
     "ci": "yarn install --frozen-lockfile",
     "package": "$(yarn bin)/sls package --aws-profile <put your profile name>",
-    "deploy": "$(yarn bin)/sls deploy --aws-profile <put your profile name>"
+    "deploy": "$(yarn bin)/sls deploy --aws-profile <put your profile name>",
+    "setup-dev": "source ./scripts/export-aws-credentials.sh"
   },
   "dependencies": {
     "@slack/webhook": "^6.0.0",
