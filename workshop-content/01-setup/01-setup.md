@@ -21,7 +21,7 @@ Choose a directory where you'd like to clone this repo to (it could even just be
 
 Run the following in your command line
 
-`git@github.com:DevOps-Represent/simple-lambda-alert-notification.git`
+`git clone git@github.com:DevOps-Represent/simple-lambda-alert-notification.git`
 
 If you don't have a github account, please download the zip by going to the [github link](https://github.com/DevOps-Represent/simple-lambda-alert-notification), clicking on the green `Code` dropdown button and selecting the `Download ZIP` link.
 
@@ -35,8 +35,12 @@ If you don't already have one, you'll have to set up a personal AWS account. If 
 
 - If you DO have an account, log in (preferably not as root and you've set up a user via IAM that has permissions to deploy resources).
 
-  - Create an [IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html)
+  - Create an [IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html) or use the root user.
   - Set up a access key ID and secret by following instructions [HERE](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey). Keep this access key and secret handy. We will need that while calling the secure API.
+    - Login with the new IAM user or use the root user
+    - In the navigation bar on the upper right, choose your user name, and then choose My Security Credentials.
+    - Expand the Access keys (access key ID and secret access key) section.
+    - To create an access key, choose Create New Access Key.
 
 - If you DONT have an account, go [HERE](https://aws.amazon.com/) to create one, you'll need a credit card - Don't worry no cost will be incured during this workshop (~$1 will be taken out of your account on initial sign-up but this will be automatically refunded by AWS).
 
