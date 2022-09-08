@@ -10,6 +10,7 @@
     "setup-dev": "source ./scripts/export-aws-credentials.sh"
   },
   "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.165.0",
     "@slack/webhook": "^6.0.0",
     "dog-names": "^2.0.0",
     "lodash.shuffle": "^4.2.0",
