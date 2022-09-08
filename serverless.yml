@@ -50,4 +50,16 @@ resources: # CloudFormation template syntax
         AlarmActions:
           - Ref: InvalidNameNotificationHY
 
+    breedDB:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: dogBreeds
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: DogBreed
+            AttributeType: S
+        KeySchema:
+          - AttributeName: DogBreed
+            KeyType: HASH
+
     
