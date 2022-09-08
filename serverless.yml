@@ -1,4 +1,4 @@
-service: simple-project-alert-notification
+service: alert-notification-hy
 
 provider:
   name: aws
@@ -15,6 +15,39 @@ functions:
           path: generate/{breed}/name
           method: get
           cors: true
+  slack-notifications:
+    handler: src/handlers/slack-notification/slack-notification.handler
+    environment:
+      SLACK_WEBHOOK_URL: ${env:SLACK_WEBHOOK_URL}
+    events:
+      - sns:
+          arn:
+            Ref: InvalidNameNotificationHY
+          topicName: Invalid-Name-Notification-hy
 
-resources: 
+resources: # CloudFormation template syntax
   Resources:
+    InvalidNameNotificationHY:
+      Type: AWS::SNS::Topic
+      Properties: 
+        TopicName: Invalid-Name-Notification-hy
+
+    InvalidNameAlarm:
+      Type: AWS::CloudWatch::Alarm
+      Properties:
+        AlarmName: hy-InvalidNameAlarm
+        AlarmDescription: Get generated dog name lambda alarm
+        Namespace: AWS/ApiGateway
+        MetricName: 5XXError
+        Dimensions:
+          - Name: ApiName
+            Value: ${self:provider.stage}-${self:service}
+        Statistic: Sum
+        ComparisonOperator: GreaterThanThreshold
+        Threshold: 0
+        Period: 60
+        EvaluationPeriods: 1
+        AlarmActions:
+          - Ref: InvalidNameNotificationHY
+
+    
