@@ -4,7 +4,7 @@ steps:
   - label: ':rocket: Deploy Serverless'
     commands:
       - yarn
-      - serverless deploy
+      - yarn serverless deploy
     plugins:
       - seek-oss/aws-sm#v2.3.1:
           env:
