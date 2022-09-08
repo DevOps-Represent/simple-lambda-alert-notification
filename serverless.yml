@@ -16,6 +16,7 @@ provider:
         - dynamodb:GetSharedIterator
         - dynamodb:ListStreams
         - dynamodb:ListShards
+        - dynamodb:Query
       Resource:
         - 'arn:aws:dynamodb:ap-southeast-2:${aws:accountId}:table/*'
 
