@@ -20,7 +20,7 @@ function generateHttpResponse({ statusCode, body = null }) {
   const command = new QueryCommand({
     ConsistentRead: true,
   TableName: "dogBreeds",
-    KeyConditionExpression: "#DogBreed = :ref",
+    KeyConditionExpression: "DogBreed = :ref",
     ExpressionAttributeValues: {
       ":ref": { S: breed },
     },
