@@ -1,4 +1,4 @@
-service: simple-project-alert-notification
+service: alert-notification-hy
 
 provider:
   name: aws
