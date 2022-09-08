@@ -1,4 +1,4 @@
-const dogBreedData = require('../../lib/dog-breed.json');
+const { DynamoDBClient, QueryCommand } = require("@aws-sdk/client-dynamodb");
 const { generateRandomName } = require('../../lib/generate-random-name');
 
 function generateHttpResponse({ statusCode, body = null }) {
@@ -12,13 +12,25 @@ function generateHttpResponse({ statusCode, body = null }) {
   };
 }
 
-module.exports.handler = (event, context, callback) => {
+ module.exports.handler = async (event, context, callback) => {
   const { pathParameters: { breed } } = event;
 
   try {
-    if (!dogBreedData.some(x => x === breed)) {
-      throw new Error('Breed provided is not valid');
-    }
+  const client = new DynamoDBClient({ Region: "ap-southeast-2" });
+  const command = new QueryCommand({
+    ConsistentRead: true,
+  TableName: "dogBreeds",
+    KeyConditionExpression: "#DogBreed = :ref",
+    ExpressionAttributeValues: {
+      ":ref": { S: breed },
+    },
+  });
+
+  const response = await client.send(command);
+
+  if (response.Count === 0) {
+    throw new Error("Breed provided is not valid");
+  }
 
     return callback(null, generateHttpResponse({
       statusCode: 200,
