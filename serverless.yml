@@ -6,6 +6,18 @@ provider:
   memorySize: 1024
   stage: ${opt:stage, 'dev'}
   region: ap-southeast-2
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:GetItem
+        - dynamodb:UpdateItem
+        - dynamodb:DescribeStream
+        - dynamodb:GetRecords
+        - dynamodb:GetSharedIterator
+        - dynamodb:ListStreams
+        - dynamodb:ListShards
+      Resource:
+        - 'arn:aws:dynamodb:ap-southeast-2:${aws:accountId}:table/*
 
 functions: 
   get-generated-dog-name:
