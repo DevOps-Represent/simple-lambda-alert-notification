@@ -17,7 +17,7 @@ provider:
         - dynamodb:ListStreams
         - dynamodb:ListShards
       Resource:
-        - 'arn:aws:dynamodb:ap-southeast-2:${aws:accountId}:table/*
+        - 'arn:aws:dynamodb:ap-southeast-2:${aws:accountId}:table/*'
 
 functions: 
   get-generated-dog-name:
@@ -73,5 +73,3 @@ resources: # CloudFormation template syntax
         KeySchema:
           - AttributeName: DogBreed
             KeyType: HASH
-
-    
