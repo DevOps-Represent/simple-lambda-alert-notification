@@ -6,6 +6,7 @@ This section will cover the key concepts we're going to be referencing throughou
     - Lambda
     - Cloudwatch
     - SNS
+    - SQS
 - [Event driven architecture](#what-is-event-driven-architecture)
 - [Serverless](#what-is-serverless)
 
