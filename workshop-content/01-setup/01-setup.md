@@ -42,7 +42,7 @@ If you don't already have one, you'll have to set up a personal AWS account. If 
     - Expand the Access keys (access key ID and secret access key) section.
     - To create an access key, choose Create New Access Key.
 
-- If you DONT have an account, go [HERE](https://aws.amazon.com/) to create one, you'll need a credit card - Don't worry no cost will be incured during this workshop (~$1 will be taken out of your account on initial sign-up but this will be automatically refunded by AWS).
+- If you DONT have an account, go [HERE](https://aws.amazon.com/) to create one, you'll need a credit card - Don't worry no cost will be incurred during this workshop (~$1 will be taken out of your account on initial sign-up but this will be automatically refunded by AWS).
 
 <br/>
 
