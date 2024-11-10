@@ -1,4 +1,4 @@
-[
+export const breeds = [
     "affenpinscher",
     "african",
     "airedale",
@@ -141,4 +141,4 @@
     "weimaraner",
     "whippet",
     "irish_wolfhound"
-]
+];

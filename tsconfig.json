@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",                                 
+    "module": "ESNext",                            
+    "moduleResolution":"node",
+    "paths": {
+      "@config": ["./src/config"],
+      "@src/*": ["./src/*"],
+    },
+    "outDir": "./dist",
+    "declaration": true,                                 /* Generates corresponding '.d.ts' file. */
+    "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
+    "skipLibCheck": true,                                 /* Skip type checking all .d.ts files. */
+    "allowJs": true
+  }
+}
