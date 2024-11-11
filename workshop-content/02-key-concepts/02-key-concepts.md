@@ -60,6 +60,34 @@ Use cases include any functions you might use Lambda.
 There’s loads of examples at https://serverless.com/examples/
 
 </br>
+
+***
+## Why use Event-driven Architecture?
+***
+
+Event-driven architecture is a powerful way to build systems that react and respond to changes in real-time. Instead of having components wait for specific actions or depend on constant polling, this approach lets each part of the system listen for “events” (like a user placing an order or updating a profile) and react instantly when they happen. This enables services to stay independent from each other while still working together, making it easier to scale, handle high loads, and create responsive, resilient applications. It’s especially useful in cloud environments, where resources can scale dynamically based on activity and demand.
+
+
+***
+### Activity!
+***  
+Let's try some whiteboarding to demonstrate how these event-flows would be architected.
+
+**User Signup Workflow**
+A user signs up through an API endpoint, which triggers a series of actions.
+- API Gateway: Receives the HTTP request and invokes a Lambda function for signup processing.
+- Lambda: Processes the signup, saving the user data and publishing a notification to an SNS topic for downstream services.
+- SNS: Notifies subscribers, such as an SQS queue for welcome email scheduling and another Lambda function for analytics tracking.
+
+
+**Customer Feedback Processing**
+After a customer interaction, feedback is processed and analyzed.
+- API Gateway: Receives feedback submissions and triggers a Lambda function to process the feedback.
+- Lambda: Publishes the feedback event to an SNS topic.
+- SNS: Distributes the feedback event to subscribers, such as an SQS queue for customer service review and another Lambda function for sentiment analysis.
+- SQS: Queues the feedback for customer service, allowing them to process it asynchronously.
+
+
 </br>
 
 
