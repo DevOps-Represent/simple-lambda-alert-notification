@@ -19,13 +19,13 @@
     "supervillains": "^3.0.0"
   },
   "devDependencies": {
-    "serverless": "^2.51.2"
+    "serverless": "^2.72.4"
   },
   "author": "",
   "license": "UNLICENSED",
   "private": true,
   "volta": {
-    "node": "14.15.0",
+    "node": "18.0.0",
     "yarn": "1.22.10"
   }
 }
