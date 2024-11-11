@@ -94,7 +94,7 @@ if you have everything installed then go to the [Install serverless globally](#i
 
 ## Install serverless globally
 
-We are deploying the lambda using [serverless](https://www.serverless.com/framework/docs/). To install serverless via npm simply run `npm install -g serverless`.
+We are deploying the lambda using [serverless](https://www.serverless.com/framework/docs/). To install serverless via npm simply run `npm install -g serverless@2.72.4`.
 
 <br/>
 
